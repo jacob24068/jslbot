@@ -8,6 +8,6 @@
   },
   "dependencies": {
     "discord.js": "@latest",
-    "pg": "7.4.0@latest"
+    "pg": "@latest"
   }
 }
