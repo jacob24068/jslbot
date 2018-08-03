@@ -54,10 +54,10 @@ const color = function(message, args){
             message.guild.createRole({
                 name: color,
                 color: rgbToHex(rgbcolor[0], rgbcolor[1], rgbcolor[2]),
-            }).then(r => console.log(r))
+            }).then(role => message.member.addRole(role))
+        }else{
+            message.member.addRole(role)
         }
-        console.log('2')
-        message.member.addRole(role)
     }else{
         message.channel.send("that's not a real color idiot, !colors")
     }
