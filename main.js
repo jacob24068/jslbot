@@ -37,7 +37,7 @@ const color = function(message, args){
     if (colors[color]) {
         let role = message.guild.roles.find('name', color)
         let rgbcolor = colors[color]
-        if (message.member.roles.array){
+        if (message.member.roles.array.length != 0){
         message.member.roles.array.forEach(element => {
             if (colors[element.name]){
                 message.member.removeRole(element)
