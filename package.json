@@ -7,8 +7,8 @@
     "start": "node main.js"
   },
   "dependencies": {
-    "discord.js": "@latest",
-    "pg": "@latest",
-    "color-name": "@latest"
+    "discord.js": "",
+    "pg": "",
+    "color-name": ""
   }
 }
