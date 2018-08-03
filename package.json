@@ -1,0 +1,13 @@
+{
+  "name": "jsl-bot",
+  "description": "",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "dependencies": {
+    "discord.js": "@latest",
+    "pg": "7.4.0@latest"
+  }
+}
