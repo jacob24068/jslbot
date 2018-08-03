@@ -1,6 +1,7 @@
 const djs = require("discord.js")
 const discordClient = new djs.Client()
 const { Client } = require('pg');
+const prefix = "!"
 
 discordClient.login(process.env.botToken)
 const pgClient = new Client({
@@ -11,11 +12,11 @@ pgClient.connect();
 
 let saveData = {}
 
-/*pgClient.query(`SELECT * FROM userdata`, null, (err, res) => {
+pgClient.query(`SELECT * FROM userdata`, null, (err, res) => {
     if (!err) {
         saveData = JSON.parse(res.rows[0].info)
   }
-})*/
+})
 
 const save = function() {
     pgClient.query(`DELETE FROM userdata`, null, (err, res) => {
