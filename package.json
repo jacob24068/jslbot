@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "discord.js": "@latest",
-    "pg": "@latest"
+    "pg": "@latest",
+    "color-name": "@latest"
   }
 }
