@@ -54,7 +54,7 @@ const color = function(message, args){
             message.guild.createRole({
                 name: color,
                 color: rgbToHex(rgbcolor[0], rgbcolor[1], rgbcolor[2]),
-            }).then(console.log('finished'))
+            }).then(r => console.log(r))
         }
         console.log('2')
         message.member.addRole(role)
