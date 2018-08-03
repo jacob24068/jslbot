@@ -56,8 +56,13 @@ const color = function(message, args){
     }
 }
 
+const colors = function(message){
+    message.channel.send(`this command isn't done yet, fuck off.`)
+}
+
 const aliases = {
-    "color": color
+    "color": color,
+    "colors": colors
 }
 
 discordClient.on("message", message => {
