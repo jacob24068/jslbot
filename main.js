@@ -43,11 +43,8 @@ const color = function(message, args){
         let role = message.guild.roles.find('name', color)
         let rgbcolor = colors[color]
         if (message.member.roles.array().length != 0){
-            console.log('1')
         message.member.roles.array().forEach(element => {
-            console.log('2')
             if (colors[element.name]){
-                console.log('asgdfgdhg')
                 message.member.removeRole(element)
             }
         });
@@ -67,13 +64,15 @@ const color = function(message, args){
 
 let colorfields = []
 
-Object.keys(colors).forEach(function(thing){
+const colorkeys = Object.keys(colors)
+
+for (let i=0; i<colorkeys.length; i = i + 2) {
     colorfields.push({
-        "name": thing,
-        "value": "­",
+        "name": colorkeys[i],
+        "value": colorkeys[i-1] + "\n" + colorkeys[i-2],
         "inline": true
     })
-})
+}
 
 const colorslist = function(message){
     message.channel.send(`i messaged you a list of colors`)
@@ -100,5 +99,3 @@ discordClient.on("message", message => {
     const command = args.shift().toLowerCase()
     if (aliases[command]) return aliases[command](message, args)
 })
-
-save()
