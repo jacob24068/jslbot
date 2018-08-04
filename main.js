@@ -59,12 +59,26 @@ const color = function(message, args){
             message.member.addRole(role)
         }
     }else{
-        message.channel.send("that's not a real color idiot, !colors")
+        message.channel.send("that's not a color we do here, !colors")
     }
 }
 
+let colorfields = []
+
+Object.keys(colors).forEach(function(thing){
+    colorfields.push({
+        "name": thing,
+        "value": "­",
+        "inline": true
+    })
+})
+
 const colorslist = function(message){
-    message.channel.send(`this command isn't done yet, fuck off.`)
+    message.channel.send(`i messaged you a list of colors`)
+    message.author.send({"embed": {
+        fields: colorfields
+    }
+})
 }
 
 const aliases = {
