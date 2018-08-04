@@ -84,11 +84,11 @@ Object.keys(colors).forEach(function(item){
     }
 })
 
-alphabet.array().forEach(function(item) {
+Object.keys(alphabet).forEach(function(item) {
     console.log(item)
     colorfields.push({
         "name": item,
-        "value": item,
+        "value": alphabet[item],
         "inline": true
     })
 })
