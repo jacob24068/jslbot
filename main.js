@@ -38,7 +38,7 @@ function rgbToHex(r, g, b) {
 }
 
 const color = function(message, args){
-    const color = args[0]
+    const color = args[0].toLowerCase()
     if (colors[color]) {
         let role = message.guild.roles.find('name', color)
         let rgbcolor = colors[color]
@@ -63,17 +63,6 @@ const color = function(message, args){
 }
 
 let colorfields = []
-
-/*const colorkeys = Object.keys(colors)
-
-for (let i=2; i<colorkeys.length; i = i + 2) {
-    colorfields.push({
-        "name": colorkeys[i],
-        "value": colorkeys[i-1] + "\n" + colorkeys[i-2],
-        "inline": true
-    })
-}*/
-
 let alphabet = {}
 
 Object.keys(colors).forEach(function(item){
