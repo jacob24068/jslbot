@@ -43,7 +43,9 @@ const color = function(message, args){
         let role = message.guild.roles.find('name', color)
         let rgbcolor = colors[color]
         if (message.member.roles.array.length != 0){
+            console.log('1')
         message.member.roles.array.forEach(element => {
+            console.log('2')
             if (colors[element.name]){
                 console.log('asgdfgdhg')
                 message.member.removeRole(element)
@@ -81,9 +83,14 @@ const colorslist = function(message){
 })
 }
 
+const rentroom = function(message, args){
+
+}
+
 const aliases = {
     "color": color,
-    "colors": colorslist
+    "colors": colorslist,
+    "rentroom": rentroom
 }
 
 discordClient.on("message", message => {
