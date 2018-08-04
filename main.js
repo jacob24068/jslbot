@@ -45,12 +45,12 @@ const color = function(message, args){
         if (message.member.roles.array.length != 0){
         message.member.roles.array.forEach(element => {
             if (colors[element.name]){
+                console.log('asgdfgdhg')
                 message.member.removeRole(element)
             }
         });
         }
         if (!role) {
-            console.log('hi')
             message.guild.createRole({
                 name: color,
                 color: rgbToHex(rgbcolor[0], rgbcolor[1], rgbcolor[2]),
