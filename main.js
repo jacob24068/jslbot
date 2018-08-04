@@ -42,9 +42,9 @@ const color = function(message, args){
     if (colors[color]) {
         let role = message.guild.roles.find('name', color)
         let rgbcolor = colors[color]
-        if (message.member.roles.array.length != 0){
+        if (message.member.roles.array().length != 0){
             console.log('1')
-        message.member.roles.array.forEach(element => {
+        message.member.roles.array().forEach(element => {
             console.log('2')
             if (colors[element.name]){
                 console.log('asgdfgdhg')
