@@ -64,19 +64,39 @@ const color = function(message, args){
 
 let colorfields = []
 
-const colorkeys = Object.keys(colors)
+/*const colorkeys = Object.keys(colors)
 
-for (let i=0; i<colorkeys.length; i = i + 2) {
+for (let i=2; i<colorkeys.length; i = i + 2) {
     colorfields.push({
         "name": colorkeys[i],
         "value": colorkeys[i-1] + "\n" + colorkeys[i-2],
         "inline": true
     })
-}
+}*/
+
+let alphabet = {}
+
+Object.keys(colors).forEach(function(item){
+    if (alphabet[item.slice(0,1)]) {
+        alphabet[item.slice(0,1)] = alphabet[item.slice(0,1)] + "\n" + item
+    }else{
+        alphabet[item.slice(0,1)] =  item  
+    }
+})
+
+alphabet.array().forEach(function(item) {
+    console.log(item)
+    colorfields.push({
+        "name": item,
+        "value": item,
+        "inline": true
+    })
+})
 
 const colorslist = function(message){
     message.channel.send(`i messaged you a list of colors`)
     message.author.send({"embed": {
+        title: "colors",
         fields: colorfields
     }
 })
