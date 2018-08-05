@@ -128,7 +128,7 @@ const roominput = function(message, args){
         }})
     }else if (state == "confirmname") {
         if (!chosennames[authorid]) return
-        if (!content.toLowerCase().match("no") || !content.toLowerCase().match("yes")) return
+        if (!(content.toLowerCase().match("no") || content.toLowerCase().match("yes"))) return
         if (content.toLowerCase().match("no")) {
             waitingforinput[authorid] = "name"
             message.channel.send({"embed": {
@@ -145,7 +145,7 @@ const roominput = function(message, args){
         }
     }else if (state == "type") {
         if (!chosennames[authorid]) return
-        if (!content.toLowerCase().match("voice") || !content.toLowerCase().match("text") || !content.toLowerCase().match("text")) return
+        if (!(content.toLowerCase().match("voice") || content.toLowerCase().match("text") || content.toLowerCase().match("text"))) return
         const voice = content.toLowerCase().match("voice") || content.toLowerCase().match("both")
         const text = content.toLowerCase().match("text") || content.toLowerCase().match("both")
         message.guild.createRole(chosennames[authorid]).then(function(role){
