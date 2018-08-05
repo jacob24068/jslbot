@@ -103,6 +103,7 @@ const rentroom = function(message, args){
         title: "You are already creating a room, type !cancel to restart.",
         color: Number("0x"+Math.floor(Math.random()*16777215).toString(16))
     }})
+    if (!saveData[authorid]) {saveData[authorid] = {}}
     if (saveData[authorid].room) return message.channel.send({"embed": {
         title: "You are already have a room. Type !manage to manage your current room.",
         color: Number("0x"+Math.floor(Math.random()*16777215).toString(16))
