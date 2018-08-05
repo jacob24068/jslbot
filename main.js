@@ -149,7 +149,7 @@ const roominput = function(message, args){
         if (!(content.toLowerCase().match("voice") || content.toLowerCase().match("text") || content.toLowerCase().match("text"))) return
         const voice = content.toLowerCase().match("voice") || content.toLowerCase().match("both")
         const text = content.toLowerCase().match("text") || content.toLowerCase().match("both")
-        message.guild.createRole(chosennames[authorid]).then(function(role){
+        message.guild.createRole({name: chosennames[authorid]}).then(function(role){
             message.member.addRole(role)
             message.guild.createChannel(chosennames[authorid], "text", [{
                 id: message.guild.id,
