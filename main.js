@@ -181,9 +181,9 @@ const aliases = {
 
 discordClient.on("message", message => {
     if (message.author.bot) return
+    if (waitingforinput[message.author.id]) return roominput(message)
     if (message.content.substr(0,prefix.length) != prefix) return
     const args = message.content.slice(prefix.length).trim().split(/ +/g)
     const command = args.shift().toLowerCase()
-    if (waitingforinput[message.author.id]) return roominput(message, args)
     if (aliases[command]) return aliases[command](message, args)
 })
