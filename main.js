@@ -126,6 +126,7 @@ const roominput = function(message, args){
             description: content + " (reply with yes/no)",
             color: Number("0x"+Math.floor(Math.random()*16777215).toString(16))
         }})
+        waitingforinput[authorid] = "confirmname"
     }else if (state == "confirmname") {
         if (!chosennames[authorid]) return
         if (!(content.toLowerCase().match("no") || content.toLowerCase().match("yes"))) return
